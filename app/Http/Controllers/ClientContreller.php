@@ -77,7 +77,7 @@ class ClientContreller extends Controller
 
   public function referide()
   {
-    return view('registrerReferides');
+    return view('register-referral');
   }
 
   public function create_referide(ReferidesRequest $request)
