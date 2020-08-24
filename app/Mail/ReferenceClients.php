@@ -21,6 +21,9 @@ class ReferenceClients extends Mailable
   {
     $codeUser = ClientCard::select('id', 'codReference')->where('userId', Auth()->user()->id)->get();
     $onlyCode = $codeUser[0]->codReference;
-    return $this->view('sendEmail', compact('onlyCode'));
+    $recipient = $this->to[0];
+    return $this->from('info@waffcake.com')
+                ->view('sendEmail', compact('onlyCode', 'recipient'))
+                ->subject('Alguien te ha referido - Waff Cake');
   }
 }
