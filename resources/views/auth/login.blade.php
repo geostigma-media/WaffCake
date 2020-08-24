@@ -9,7 +9,7 @@
     @endif
     <br>
     <div>
-      <img src="{{ asset ('img/waffcake-logo-small.png')}}" alt="WaffCake">
+        <img src="{{ asset ('img/waffcake-logo-small.png') }}" alt="WaffCake">
     </div>
     @error('email')
     <br>
