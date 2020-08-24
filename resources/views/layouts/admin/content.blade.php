@@ -69,7 +69,7 @@
         <div class="card">
 
             <div class="card-body">
-                <ul id="buys-content-tabs" class="nav nav-tabs" role="tablist">
+                <ul id="buys-content-tabs" class="nav nav-tabs" style="display: none;" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
                             <i class="fas fa-star"></i>
@@ -306,7 +306,7 @@
 @section('scripts')
 <script>
     $(document).ready(function () {
-        console.log("ready")
+        $("#buys-content-tabs").show();
         $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
             localStorage.setItem('activeTab', $(e.target).attr('href'));
         });
