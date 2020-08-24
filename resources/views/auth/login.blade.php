@@ -98,6 +98,11 @@
               ><b>Registrate</b></a
             >
           </div>
+          <div class="col-sm-12 text-center">
+            <a href="{{ route('password.request') }}" class="text-primary m-l-5"
+              ><b>¿Perdió su contraseña?</b></a
+            >
+          </div>
         </div>
       </form>
     </div>
