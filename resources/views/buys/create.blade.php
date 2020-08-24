@@ -24,7 +24,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <ul class="nav nav-tabs" role="tablist">
+                    <ul class="nav nav-tabs" id="buys-create-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Buscar cliente
                                 frecuente</a>
