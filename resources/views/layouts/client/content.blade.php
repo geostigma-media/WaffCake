@@ -41,7 +41,6 @@
         <div class="card-body">
         <h5 class="card-title"><i class="fas fa-bullhorn"></i> Pasa la voz WaffCake: @isset($codReferenceClient)<span> {{$codReferenceClient}}</span>@endisset</h5>
           <p class="card-text">Podrás ganar el 5% de descuento cada vez que refieras a un amigo y &eacute;l haga efectiva una compra, adem&aacute;s la persona que refieres obtendr&aacute; un descuento del 2%.</p>
-          <p><a href="">Conoce más aquí</a></p>
           <div>
             @if(Session::has('message'))
               <div class="alert alert-success"> {!! Session::get('message') !!} </div>
