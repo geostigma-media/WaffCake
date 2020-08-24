@@ -1,3 +1,7 @@
 {
-  "E-Mail Address": "Correo Electrónico"
+  "Reset Password": "Reestablecer contraseña",
+  "E-Mail Address": "Correo Electrónico",
+  "Password": "Contraseña",
+  "Confirm Password": "Confirmar Contraseña",
+  "Send Password Reset Link": "Enviar un enlace"
 }
