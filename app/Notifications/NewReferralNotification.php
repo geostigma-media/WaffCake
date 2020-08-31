@@ -41,7 +41,7 @@ class NewReferralNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $codeLine = sprintf('Has sido referido por un amigo para disfrutar de los beneficios de "Pasa la voz WaffCake". Registrate con el código: %s', $this->code);
+        $codeLine = sprintf('Haz sido referido por un amigo para disfrutar de los beneficios de "Pasa la voz WaffCake". Registrate con el código: %s', $this->code);
         $url = sprintf('/referidos?onlyCode=%s&recipient=%s', $this->code, $this->recipient);
 
         return (new MailMessage)
