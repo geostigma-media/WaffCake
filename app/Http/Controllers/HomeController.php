@@ -14,6 +14,8 @@ use App\Mail\ReferenceClients;
 use App\ResponseSurveys;
 use App\Surveys;
 use Illuminate\Support\Facades\Session;
+use Notification;
+use App\Notifications\NewReferralNotification;
 
 class HomeController extends Controller
 {
@@ -138,7 +140,8 @@ class HomeController extends Controller
 
   public function sendEmail(Request $request)
   {
-    Mail::to($request->emialReferide)->send(new ReferenceClients());
+    $toAddress = $request->emialReferide;
+    Notification::route('mail', $toAddress)->notify(new NewReferralNotification( ['code' => $request->codReference,'recipient' => $toAddress] ) );
     Session::flash('message', 'Correo electronico enviado con éxito');
     return redirect()->route('home');
   }
