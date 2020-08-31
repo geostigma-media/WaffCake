@@ -13,7 +13,7 @@ Route::get('/referidos',  'ClientContreller@referide')->name('referide');
 Route::get('/encuesta', function () {
   return view('surveysPublic');
 });
-Route::post('/registro_referidos', 'ClientContreller@create_referide')->name('create_referide');
+Route::post('/registrar-referidos', 'ClientContreller@registerReferral')->name('register_referral');
 Route::post('/encuesta/publica', 'SurveysController@surveyPublic')->name('surveyPublic');
 Route::get('/terminos_condicones', 'ClientContreller@terminosCondiciones')->name('terminos_condicones');
 

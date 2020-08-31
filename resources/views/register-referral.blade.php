@@ -23,7 +23,7 @@
             {!! Session::get('message') !!}
           </div>
           @endif
-          <form method="POST" action="{{ route('create_referide') }}">
+          <form method="POST" action="{{ route('register_referral') }}">
             {{ method_field('post') }}
             @csrf
             <div class="form-group row">
