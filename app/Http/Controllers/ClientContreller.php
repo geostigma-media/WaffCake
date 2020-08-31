@@ -80,22 +80,25 @@ class ClientContreller extends Controller
     return view('register-referral');
   }
 
-  public function create_referide(ReferidesRequest $request)
+  public function registerReferral(ReferidesRequest $request)
   {
     if (ClientCard::where('codReference', '=', $request->userReferide)->exists()) {
-      $client = new User();
-      $client->name = $request->name;
-      $client->lastname = $request->lastname;
-      $client->numIndentificate = $request->numIndentificate;
-      $client->email = $request->email;
-      $client->userReferide = $request->userReferide;
-      $client->password = Hash::make($request->password);
-      $client->mobile = $request->mobile;
-      $client->roleId = 2;
-      $client->save();
-      return redirect()->route('home');
+      $user = new User();
+      $user->name = $request->name;
+      $user->lastname = $request->lastname;
+      $user->numIndentificate = $request->numIndentificate;
+      $user->email = $request->email;
+      $user->userReferide = $request->userReferide;
+      $user->password = Hash::make($request->password);
+      $user->mobile = $request->mobile;
+      $user->roleId = 2;
+      $user->save();
+      Session::flash('message', 'Tu registro como referido ha sido exitoso!');
+      Session::flash('alert-class', 'alert-success');
+      return redirect()->route('login');
     } else {
       Session::flash('message', 'El codigo de usario no existe, intenta nuevamente');
+      Session::flash('alert-class', 'alert-danger');
       return redirect()->route('referide');
     }
   }
