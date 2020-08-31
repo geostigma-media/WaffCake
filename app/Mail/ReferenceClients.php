@@ -23,7 +23,7 @@ class ReferenceClients extends Mailable
     $onlyCode = $codeUser[0]->codReference;
     $recipient = $this->to[0];
     return $this->from('info@waffcake.com')
-                ->view('sendEmail', compact('onlyCode', 'recipient'))
+                ->view('emails.referral-invitation', compact('onlyCode', 'recipient'))
                 ->subject('Alguien te ha referido - Waff Cake');
   }
 }
