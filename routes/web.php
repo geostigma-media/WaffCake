@@ -55,6 +55,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/encuestas/grafica', 'SurveysController@chartSurvey')->name('chartSurvey');
     Route::get('/encuestas/editar/{id}', 'SurveysController@surveyEdit')->name('surveyEdit');
     Route::put('/encuestas/{id}', 'SurveysController@surveyUpdate')->name('surveyUpdate');
+
+    //USUARIOS
+    Route::post('/users/activate', 'UserController@activate')->name('users.activate');
   });
 
   Route::group(['middleware' => ['client']], function () {

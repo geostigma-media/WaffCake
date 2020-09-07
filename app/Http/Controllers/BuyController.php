@@ -73,15 +73,9 @@ class BuyController extends Controller
 
   public function storeRegular(Request $request)
   {
-    $codeUser = User::select('id', 'userReferide', 'name')->where('id', $request->userId)->get();
-    foreach ($codeUser as $code) {
-      $onlyCode = $code->userReferide;
-    }
-    foreach ($codeUser as $code) {
-      $onlyName = strtolower($code->name);
-    }
+    $user = User::find($request->userId);
 
-    if (BuysGeneral::where('userId', $request->userId)->exists() || $onlyCode == null) {
+    if (BuysGeneral::where('userId', $request->userId)->exists() || $user->userReferide == null) {
       BuysGeneral::create([
         'userId' => $request->userId,
       ]);

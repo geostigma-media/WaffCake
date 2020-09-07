@@ -72,9 +72,10 @@
                         <div class="tab-pane" id="tabs-2" role="tabpanel">
                             <div class="card-body">
                                 <!-- <div id="alerta"></div> -->
-                                <form class="user" action="{{ route('buys_storeRegular') }}" method="post">
+                                <form class="user" action="{{ route('users.activate') }}" method="post">
                                     {{ method_field('post') }}
                                     {{ csrf_field() }}
+                                    <input type="hidden" name="from" value="buys" />
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">
                                             Código de cliente por Indentificación
