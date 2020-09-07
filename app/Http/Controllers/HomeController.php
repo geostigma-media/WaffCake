@@ -28,16 +28,6 @@ class HomeController extends Controller
 
   public function index()
   {
-    $frecuentClients = ClientCard::select('id', 'codReference')->where('state', 1)->get();
-
-    $listClients = DB::table('users')
-      ->where('roleId', 2)
-      ->whereNotExists(function ($query) {
-        $query->select(DB::raw(1))
-          ->from('client_cards')
-          ->whereRaw('client_cards.userId = users.id');
-      })
-      ->get();
     $idAuth = Auth()->user()->id;
     $rol = Auth()->user()->roleId;
 
@@ -107,15 +97,23 @@ class HomeController extends Controller
 
       if ($codeReferenceUser != '[]') {
         $codReference = $codeReferenceUser[0];
-        $codReferenceClient = DB::table('users')
-          // ->leftJoin('buys_generals', 'users.id', '=', 'buys_generals.userId')
-          // ->select('id', 'userReferide', 'name', 'buys_generals.userId')
-          ->where('userReferide', $codReference->codReference)
-          ->count();
+
+        //We must verify that the user's referrals have at least one purchase
+        //TODO: this count must use eloquent relationships
+        $activeUserReferrals = USER::where('userReferide', $codReference->codReference)->get();
+        $referralsBuysCount = 0;
+        foreach ($activeUserReferrals as $referral) {
+          $buy = BuysGeneral::where('userId', $referral->id)->first();
+
+          if($buy){
+            $referralsBuysCount ++;
+          }
+        }
+
         return view('home', compact(
           'purachases',
           'codeClient',
-          'codReferenceClient',
+          'referralsBuysCount',
           'conteoPurachasesEspecial',
           'purachasesClientRegular',
           'countPurachases',
@@ -129,6 +127,14 @@ class HomeController extends Controller
         'surveysActive'
       ));
     } else {
+      $listClients = DB::table('users')
+        ->where('roleId', 2)
+        ->whereNotExists(function ($query) {
+          $query->select(DB::raw(1))
+            ->from('client_cards')
+            ->whereRaw('client_cards.userId = users.id');
+        })->get();
+      $frecuentClients = ClientCard::select('id', 'codReference')->where('state', 1)->get();
       $clients = User::where('roleId', 2)->count();
       $totalBuysRegular = BuysGeneral::count();
       $totalBuysEspecial = CuponBuy::count();
