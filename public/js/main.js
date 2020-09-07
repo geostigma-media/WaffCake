@@ -173,6 +173,7 @@ function specialCustomer() {
   if (codReference != 0) {
     $.getJSON(route("loadBuys", { id: codReference }), function (data) {
       if (data.length == 0) {
+        let alerta = document.getElementById("alerta");
         $.getJSON(route("users.find_user_by_client_card", { id: codReference }), function (user) {
           if (user.userReferide) {
             const msg = "Primera compra por referido, aplicar 2% de descuento";
