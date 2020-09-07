@@ -133,7 +133,7 @@
                                 </div>
                                 <span>En este panel activarás un cliente para generarle su código, después de activarlo
                                     deberás registrar la venta y si un cliente nuevo está en el establecimiento podrás
-                                    ingresarlo en “registrar cliente nuevo” posterior a registrarlo , registra su venta
+                                    ingresarlo en “registrar cliente nuevo” posterior a registrarlo, registra su venta
                                     y listo.</span>
                                 <hr>
 
@@ -173,7 +173,7 @@
                                 </div>
                                 <span>En este panel activarás un cliente para generarle su código, después de activarlo
                                     deberás registrar la venta y si un cliente nuevo está en el establecimiento podrás
-                                    ingresarlo en “registrar cliente nuevo” posterior a registrarlo , registra su venta
+                                    ingresarlo en “registrar cliente nuevo” posterior a registrarlo, registra su venta
                                     y listo.</span>
                                 <hr>
                                 <div class="form-group">
