@@ -30,8 +30,9 @@ class UserController extends Controller
         return redirect()->route($redirectTo);
     }
     //TODO: move the route of this method to api routes file
-    public function showJson(User $user)
+    public function findByClientCard(ClientCard $clientCard)
     {
+        $user = User::find($clientCard->userId);
         return response()->json($user);
     }
 }
