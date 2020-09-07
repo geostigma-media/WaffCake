@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/encuestas/{id}', 'SurveysController@surveyUpdate')->name('surveyUpdate');
 
     //USUARIOS
+    Route::get('/users-json/{user}', 'UserController@showJson')->name('users.show_json'); //TODO: move to api routes file
     Route::post('/users/activate', 'UserController@activate')->name('users.activate');
   });
 
