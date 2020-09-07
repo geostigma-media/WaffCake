@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $(".example").DataTable({
     language: {
       sProcessing: "Procesando...",
@@ -18,26 +18,26 @@ $(document).ready(function () {
         sFirst: "Primero",
         sLast: "Último",
         sNext: "Siguiente",
-        sPrevious: "Anterior",
+        sPrevious: "Anterior"
       },
       oAria: {
         sSortAscending:
           ": Activar para ordenar la columna de manera ascendente",
         sSortDescending:
-          ": Activar para ordenar la columna de manera descendente",
-      },
-    },
+          ": Activar para ordenar la columna de manera descendente"
+      }
+    }
   });
   $(".codReference").select2({
     allowClear: true,
-    placeholder: "Buscar número de cédula...",
+    placeholder: "Buscar código de cliente..."
   });
   $(".codReferenceCliente").select2({
     allowClear: true,
-    placeholder: "  Buscar código...",
+    placeholder: "  Buscar código de cliente..."
   });
   $("#mensajeCodigo").hover(
-    function () {
+    function() {
       $(this).append(
         $(`<div id="mensajeCodigo">
       <span>Este es Tu código del programa, ¡tu identificación! y debe ser
@@ -48,16 +48,19 @@ $(document).ready(function () {
     </div>`)
       );
     },
-    function () {
-      $(this).find("#mensajeCodigo").last().remove();
+    function() {
+      $(this)
+        .find("#mensajeCodigo")
+        .last()
+        .remove();
     }
   );
-  $(document).ready(function () {
+  $(document).ready(function() {
     let alerta = $(".close").length;
     if (alerta == 1) {
       console.log("alerta1", alerta);
     } else {
-      setTimeout(function () {
+      setTimeout(function() {
         $(".alert-success").fadeOut(1500);
       }, 3000);
       console.log("alerta2", alerta);
@@ -76,7 +79,7 @@ function countReferences() {
       url: url,
       type: "POST",
       data: data,
-      success: function (data) {
+      success: function(data) {
         console.log(data);
         if (code.length > 0) {
           if (data.length > 0) {
@@ -88,7 +91,7 @@ function countReferences() {
             );
             $("#btnsearchCode").hide();
             $("#formPagar").show();
-            setTimeout(function () {
+            setTimeout(function() {
               $("#totalReferides").fadeOut(1500);
             }, 3000);
           } else {
@@ -97,7 +100,7 @@ function countReferences() {
                 <span>Código sin puntos por redenir</span>
               </div>`
             );
-            setTimeout(function () {
+            setTimeout(function() {
               $("#totalReferides").fadeOut(1500);
             }, 3000);
           }
@@ -106,7 +109,7 @@ function countReferences() {
             <span>el campo es requerido</span>
           </div>`;
         }
-      },
+      }
     });
   }
 }
@@ -119,10 +122,10 @@ function renovationCard() {
       url: url,
       type: "POST",
       data: data,
-      beforeSend: function () {
+      beforeSend: function() {
         $("#searchCode")[0].reset();
       },
-      success: function (data) {
+      success: function(data) {
         console.log(data);
         if (data.length > 0) {
           let count = data.length * 5;
@@ -131,11 +134,11 @@ function renovationCard() {
               <span>El cliente tiene ${data.length} referidos, para un total de ${count}% de descuento</span>
             </div>`
           );
-          setTimeout(function () {
+          setTimeout(function() {
             $("#totalReferides").fadeOut(1500);
           }, 3000);
         }
-      },
+      }
     });
   }
 }
@@ -148,18 +151,18 @@ function searchCode() {
       url: url,
       type: "POST",
       data: data,
-      success: function (data) {
+      success: function(data) {
         console.log(data);
 
         if ($.isEmptyObject(data.error)) {
           let alerta = document.getElementById("totalReferides");
           alerta.innerHTML =
             "<div id='decuento' class='alert alert-success'>Felicades, su tarjeta de cliente fiel se actualizo</div>";
-          setTimeout(function () {
+          setTimeout(function() {
             $("#totalReferides").fadeOut(1500);
           }, 3000);
         }
-      },
+      }
     });
   }
 }
@@ -168,19 +171,19 @@ function specialCustomer() {
   var codReference = $("#codReferenceCliente").val();
   console.log(codReference);
   if (codReference != 0) {
-    $.getJSON(route("loadBuys", { id: codReference }), function (data) {
+    $.getJSON(route("loadBuys", { id: codReference }), function(data) {
       if (data.length == 4) {
         let alerta = document.getElementById("alerta");
         alerta.innerHTML =
           "<div id='decuento' class='alert alert-success'>Felicades, lleva 5 compras, es acreedor al 5% de descuento</div>";
-        setTimeout(function () {
+        setTimeout(function() {
           $("#decuento").fadeOut(3000);
         }, 3000);
       } else if (data.length == 9) {
         let alerta = document.getElementById("alerta");
         alerta.innerHTML =
           "<div id='decuento' class='alert alert-success'>Felicades, lleva 10 compras, eres acreedor al 10% de descuento</div>";
-        setTimeout(function () {
+        setTimeout(function() {
           $("#decuento").fadeOut(3000);
         }, 3000);
       } else if (data.length == 11) {
@@ -188,7 +191,7 @@ function specialCustomer() {
         $("#userIdTarjet").val(idUser);
         let alerta_doce = document.getElementById("alerta");
         alerta_doce.innerHTML = `<div id='decuento' class='alert alert-success'>Felicades, lleva 12 compras, eres acreedor al 50% de descuento, y se le actualizara la tarjeta del cliente</div>`;
-        setTimeout(function () {
+        setTimeout(function() {
           $("#decuento").fadeOut(3000);
         }, 3000);
         $("#activacion").show();
@@ -205,17 +208,19 @@ function createResponseSurvey() {
     url: url,
     type: "POST",
     data: data,
-    success: function (data) {
-      $(this).closest("tr").remove();
+    success: function(data) {
+      $(this)
+        .closest("tr")
+        .remove();
       $("#response").html("");
       $("#response").append(
         `<div class="alert alert-success">
         <span>Encuesta enviada con exito, gracias por responder</span>
         </div>`
       );
-      setTimeout(function () {
+      setTimeout(function() {
         $("#response").fadeOut(1500);
       }, 3000);
-    },
+    }
   });
 }
