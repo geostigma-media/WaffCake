@@ -20,11 +20,11 @@ class UserController extends Controller
         $from = $request->from;
         $redirectTo = is_null($from) ? 'home' : $from;
 
-        // ClientCard::create([
-        //     'codReference' => rand(1000, 9999),
-        //     'state' => 1,
-        //     'userId' => $user->id,
-        // ]);
+        ClientCard::create([
+            'codReference' => rand(1000, 9999),
+            'state' => 1,
+            'userId' => $user->id,
+        ]);
 
         Session::flash('message', 'Usario activado con éxito.');
         return redirect()->route($redirectTo);
