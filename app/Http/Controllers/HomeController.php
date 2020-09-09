@@ -99,13 +99,12 @@ class HomeController extends Controller
         $codReference = $codeReferenceUser[0];
 
         //We must verify that the user's referrals have at least one purchase
-        //TODO: this count must use eloquent relationships
         $activeUserReferrals = USER::where('userReferide', $codReference->codReference)->get();
         $referralsBuysCount = 0;
         foreach ($activeUserReferrals as $referral) {
-          $buy = BuysGeneral::where('userId', $referral->id)->first();
+          $clientCard = ClientCard::where('userId', $referral->id)->withCount('cupons')->first();
 
-          if($buy){
+          if($clientCard && $clientCard->cupons_count){
             $referralsBuysCount ++;
           }
         }
