@@ -12,6 +12,16 @@
           <p>
             Eres nuestra razón de ser, regálanos tus opiniones para continuar mejorando para ti.
           </p>
+          <p>
+            Para calíficar ten encuenta la siguiente tabla:
+          </p>
+          <ul style="list-style: none;">
+            <li><strong>Muy Bueno</strong> = 5</li>
+            <li><strong>Bueno</strong> = 4</li>
+            <li><strong>Regular</strong> = 3</li>
+            <li><strong>Malo</strong> = 2</li>
+            <li><strong>Muy malo</strong> = 1</li>
+          </ul>
         </div>
         <div class="card-body">
           <form method="POST" action="{{ route('surveyPublic') }}">
