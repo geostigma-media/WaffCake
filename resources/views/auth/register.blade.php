@@ -11,8 +11,8 @@
       </p>
       <div class="card">
         <div class="card-header">
-          <p><b>Tarjeta cliente fiel</b>, recibirás 5%, 10% y hasta el 50% de descuento al acumular compras, además
-            después de inscribirte, podrás ganar hasta el 5% de descuento solo con recomendarnos en <b>“pasa la
+          <p><b>Tarjeta cliente fiel</b>, recibirás 5%, 10% y hasta el 50% de descuento al acumular compras.
+            Y Además después de inscribirte, podrás ganar hasta el 5% de descuento solo con recomendarnos en <b>“pasa la
               voz waffcake”</b> cada vez que refieras a un amigo y el haga efectiva una compra, tu recibirás el 5% y tu
             referido el 2% de descuento.</p>
           <h4 class="text-center">Comienza ahora y … ¡A disfrutar del sabor wafflero! 😊</h4>
@@ -46,7 +46,7 @@
                 </span> @enderror </div>
             </div>
             <div class="form-group row">
-              <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
+              <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electronico</label>
               <div class="col-md-6">
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                   value="{{ old('email') }}" required autocomplete="email">
@@ -74,21 +74,24 @@
                 <input id="mobile" type="number" maxlength="10"
                   oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                   class="form-control @error('mobile') is-invalid @enderror" name="mobile" required
-                  autocomplete="mobile">
+                  autocomplete="mobile" value="{{ old('mobile') }}">
                 @error('mobile') <span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong> </span>
                 @enderror </div>
             </div>
             <div class="col-12">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" name="terminos" require class="custom-control-input" id="customCheck1">
+                <input type="checkbox" name="terminos" required
+                  class="custom-control-input @error('terminos') is-invalid @enderror" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1"> He leído y acepto términos y condiciones – <a
                     href="https://www.waffcake.com/terminos_condiciones.html" target="_blank"> Ver aquí </a> </label>
+                @error('terminos') <span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong> </span>
+                @enderror
               </div>
             </div>
             <hr>
-            <div class="form-group row mb-0">
-              <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary btn-lg btn-block"> Inscribirme</button>
+            <div class="form-group mb-0 d-flex justify-content-center align-items-center">
+              <div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block px-5"> Inscribirme</button>
               </div>
             </div>
           </form>

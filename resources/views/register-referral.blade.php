@@ -99,7 +99,7 @@
               <label for="password" class="col-md-4 col-form-label text-md-right">Num de Contacto</label>
               <div class="col-md-6">
                 <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror"
-                  name="mobile" required>
+                  name="mobile" value="{{ old('mobile') }}" required>
                 @error('mobile')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -109,12 +109,15 @@
             </div>
             <div class="col-lg-12" style="margin-left: 150px;">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" required class="custom-control-input" name="terminos" id="customCheck1">
+                <input type="checkbox" required class="custom-control-input @error('terminos') is-invalid @enderror"
+                  name="terminos" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">
                   <a href="https://www.waffcake.com/terminos_condiciones.html" target="_blank">
                     Aceptar Términos y condiciones
                   </a>
                 </label>
+                @error('terminos') <span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong> </span>
+                @enderror
               </div>
             </div>
             <div class="form-group row mb-0">
