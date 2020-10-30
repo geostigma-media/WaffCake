@@ -21,8 +21,11 @@
                 <li class="nav-item dropdown u-pro">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="hidden-md-down">
-                            {{ Auth()->user()->name }} &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                        <span>
+                            {{ Auth()->user()->name }} &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </a>
                     <div class="dropdown-menu dropdown-menu-right animated flipInY">
                         <a href="{{route('getUser',Auth()->user()->id)}}" class="dropdown-item"><i class="ti-user"></i>
                             Mi
