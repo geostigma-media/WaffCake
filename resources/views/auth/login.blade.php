@@ -14,7 +14,7 @@
             @error('email')
             <br>
             <div class="alert alert-danger">
-                <strong>Correo o clave invalidas, intentelo nuevamente</strong>
+                <strong>Dirección de correo o clave inválidas, intentalo de nuevo.</strong>
             </div>
             @enderror
             @if(Session::has('message'))
@@ -74,11 +74,11 @@
         </div> -->
                 <div class="form-group m-b-0">
                     <div class="col-sm-12 text-center">
-                        Aun no tienes cuenta?
-                        <a href="{{ route('register') }}" class="text-primary m-l-5"><b>Registrate</b></a>
+                        ¿Aún no tienes cuenta?
+                        <a href="{{ route('register') }}" class="text-primary m-l-5"><b>Regístrate</b></a>
                     </div>
                     <div class="col-sm-12 text-center">
-                        <a href="{{ route('password.request') }}" class="text-primary m-l-5"><b>¿Perdió su
+                        <a href="{{ route('password.request') }}" class="text-primary m-l-5"><b>¿Perdiste tu
                                 contraseña?</b></a>
                     </div>
                 </div>
