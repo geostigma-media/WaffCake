@@ -64,7 +64,7 @@
     <script src="{{ asset ('js/perfect-scrollbar.jquery.min.js')}}"></script>
     <script src="{{ asset ('js/waves.js')}}"></script>
     <script src="{{ asset ('js/sidebarmenu.js')}}"></script>
-    <script src="{{ asset ('js/custom.min.js')}}"></script>
+    <script src="{{ asset ('js/custom.js')}}"></script>
     <script src="{{ asset ('js/raphael/raphael-min.js')}}"></script>
     <script src="{{ asset ('js/morrisjs/morris.min.js')}}"></script>
     <script src="{{ asset ('js/jquery-sparkline/jquery.sparkline.min.js')}}"></script>

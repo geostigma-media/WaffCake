@@ -15,13 +15,13 @@ $(function () {
         if (width < 1170) {
             $("body").addClass("mini-sidebar");
             $('.navbar-brand span').hide();
-            $(".sidebartoggler i").addClass("ti-menu");
+            //$(".sidebartoggler i").addClass("ti-menu");
         }
         else {
             $("body").removeClass("mini-sidebar");
             $('.navbar-brand span').show();
         }
-         var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
+        var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
         height = height - topOffset;
         if (height < 1) height = 1;
         if (height > topOffset) {
@@ -48,8 +48,8 @@ $(function () {
     // this is for close icon when navigation open in mobile view
     $(".nav-toggler").click(function () {
         $("body").toggleClass("show-sidebar");
-        $(".nav-toggler i").toggleClass("ti-menu");
-        $(".nav-toggler i").addClass("ti-close");
+        //$(".nav-toggler i").toggleClass("ti-menu");
+        $(".nav-toggler i").toggleClass("ti-close");
     });
     $(".search-box a, .search-box .app-search .srh-btn").on('click', function () {
         $(".app-search").toggle(200);
@@ -67,20 +67,20 @@ $(function () {
     $('.floating-labels .form-control').on('focus blur', function (e) {
         $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
     }).trigger('blur');
-    
+
     // ============================================================== 
     //tooltip
     // ============================================================== 
     $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
+        $('[data-toggle="tooltip"]').tooltip()
+    })
     // ============================================================== 
     //Popover
     // ============================================================== 
     $(function () {
-         $('[data-toggle="popover"]').popover()
+        $('[data-toggle="popover"]').popover()
     })
-       
+
     // ============================================================== 
     // Perfact scrollbar
     // ============================================================== 
@@ -116,7 +116,7 @@ $(function () {
     // ============================================================== 
     // Color variation
     // ==============================================================
-    
+
     var mySkins = [
         "skin-default",
         "skin-green",
@@ -131,12 +131,12 @@ $(function () {
         "skin-purple-dark",
         "skin-megna-dark"
     ]
-        /**
-         * Get a prestored setting
-         *
-         * @param String name Name of of the setting
-         * @returns String The value of the setting | null
-         */
+    /**
+     * Get a prestored setting
+     *
+     * @param String name Name of of the setting
+     * @returns String The value of the setting | null
+     */
     function get(name) {
         if (typeof (Storage) !== 'undefined') {
             return localStorage.getItem(name)
@@ -160,7 +160,7 @@ $(function () {
             window.alert('Please use a modern browser to properly view this template!')
         }
     }
-    
+
     /**
      * Replaces the old skin with the new skin
      * @param String cls the new skin class
@@ -178,7 +178,7 @@ $(function () {
     function setup() {
         var tmp = get('skin')
         if (tmp && $.inArray(tmp, mySkins)) changeSkin(tmp)
-            // Add the change skin listener
+        // Add the change skin listener
         $('[data-skin]').on('click', function (e) {
             if ($(this).hasClass('knob')) return
             e.preventDefault()
@@ -187,7 +187,7 @@ $(function () {
     }
     setup()
     $("#themecolors").on("click", "a", function () {
-        $("#themecolors li a").removeClass("working"), 
-        $(this).addClass("working")
+        $("#themecolors li a").removeClass("working"),
+            $(this).addClass("working")
     })
 });

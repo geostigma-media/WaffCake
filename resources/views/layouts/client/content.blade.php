@@ -16,7 +16,7 @@
           alt="Código waffcake"> </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title"><i class="fas fa-qrcode"></i> Tú codigo:@isset($codeClient)
+          <h5 class="card-title"><i class="fas fa-qrcode"></i> Tu código:@isset($codeClient)
             @foreach($codeClient as $code ) <span class="counter">{{$code->codReference}}</span> @endforeach
             @endisset</h5>
           <p class="card-text">Es tu identificación en el programa úsalo para hacer efectivo el descuento.</p>
