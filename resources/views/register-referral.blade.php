@@ -10,8 +10,8 @@
       </p>
       <div class="card">
         <div class="card-header">
-          <p><b>Tarjeta cliente fiel</b>, recibirás 5%, 10% y hasta el 50% de descuento al acumular compras.
-            Y Además después de inscribirte, podrás ganar hasta el 5% de descuento solo con recomendarnos en <b>"pasa la
+          <p><b>Tarjeta cliente fiel</b>, recibirás 5%, 10% y hasta el 50% de descuento al acumular compras, además
+            después de inscribirte, podrás ganar hasta el 5% de descuento solo con recomendarnos en <b>"pasa la
               voz waffcake"</b> cada vez que refieras a un amigo y el haga efectiva una compra, tu recibirás el 5% y tu
             referido el 2% de descuento.</p>
           <h4 class="text-center">Comienza ahora y ¡A disfrutar del sabor wafflero! 😊</h4>
