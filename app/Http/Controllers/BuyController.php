@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Notification;
+use App\Notifications\NewUserAccountNotification;
 
 class BuyController extends Controller
 {
@@ -99,15 +101,20 @@ class BuyController extends Controller
 
   public function createClient(RegisterRequest $request)
   {
+    $toAddress = $request->email;
     $client = new User();
     $client->name = $request->name;
     $client->lastname = $request->lastname;
     $client->numIndentificate = $request->numIndentificate;
-    $client->email = $request->email;
+    $client->email = $toAddress;
     $client->password = Hash::make($request->numIndentificate);
     $client->mobile = $request->mobile;
     $client->roleId = 2;
     $client->save();
+
+    Notification::route('mail', $toAddress)->notify(new NewUserAccountNotification() );
+    Session::flash('message', 'Se ha enviado un coreo electrónico al usuario');
+
     return redirect()->route('buys');
   }
 

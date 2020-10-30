@@ -24,7 +24,7 @@ class ResponseSurveysPublicExport implements FromCollection,WithHeadings
         'Calificación de la presentación del producto',
         'Calificación de estado del lugar',
         'Adición',
-        'Correo Electronico',
+        'Correo Electrónico',
       ];
   }
 

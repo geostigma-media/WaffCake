@@ -188,9 +188,9 @@
         <form class="user" action="/sendemail" method="POST">
           {{csrf_field()}}
           <div class="form-group">
-            <label for="emialReferide">Correo electronico Referido</label>
+            <label for="emialReferide">Correo electrónico Referido</label>
             <input type="email" class="form-control" name="emialReferide" id="emialReferide"
-              placeholder="Correo electronico Referido">
+              placeholder="Correo electrónico Referido">
             @isset($codeClient)
             @foreach($codeClient as $code )
             <input type="hidden" name="codReference" value="{{ $code->codReference }}">

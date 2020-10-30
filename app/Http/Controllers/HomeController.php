@@ -147,7 +147,7 @@ class HomeController extends Controller
   {
     $toAddress = $request->emialReferide;
     Notification::route('mail', $toAddress)->notify(new NewReferralNotification( ['code' => $request->codReference,'recipient' => $toAddress] ) );
-    Session::flash('message', 'Correo electronico enviado con éxito');
+    Session::flash('message', 'Correo electrónico enviado con éxito');
     return redirect()->route('home');
   }
 
