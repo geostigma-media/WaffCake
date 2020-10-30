@@ -138,8 +138,8 @@
                                 <hr>
 
                                 <div class="form-group">
-                                    <button type="submit" id="ventaDoce" class="btn btn-primary">Registrar
-                                        Venta</button>
+                                    <button type="submit" id="ventaDoce" class="btn btn-primary">Buscar cliente
+                                        fiel</button>
                                 </div>
                             </form>
                         </div>
@@ -178,7 +178,7 @@
                                     y listo.</span>
                                 <hr>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Activar cliente</button>
+                                    <button type="submit" class="btn btn-primary">Buscar cliente nuevo</button>
                                 </div>
                             </form>
                         </div>
@@ -233,7 +233,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="email" class="col-md-12 col-form-label ">Correo Electronico</label>
+                                    <label for="email" class="col-md-12 col-form-label ">Correo Electrónico</label>
                                     <div class="col-md-12">
                                         <input required id="email" type="email"
                                             class="form-control @error('email') is-invalid @enderror" name="email"
@@ -261,7 +261,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <button type="submit" class="btn btn-primary btn-block">Registrar Cliente</button>
+                                    <button type="submit" class="btn btn-primary">Registrar cliente
+                                        nuevo</button>
                                 </div>
                             </form>
                         </div>

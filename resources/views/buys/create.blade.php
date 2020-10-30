@@ -26,14 +26,17 @@
                 <div class="card-body">
                     <ul class="nav nav-tabs" id="buys-create-tabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Buscar cliente
-                                frecuente</a>
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"><i
+                                    class="fas fa-star"></i> Buscar cliente
+                                fiel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Buscar cliente nuevos</a>
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                <i class="fas fa-users"></i> Buscar cliente nuevos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Agregar cliente</a>
+                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                <i class="fas fa-user"></i> Agregar cliente</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -63,8 +66,8 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" id="ventaDoce" class="btn btn-primary">Realizar
-                                            Venta</button>
+                                        <button type="submit" id="ventaDoce" class="btn btn-primary">Buscar cliente
+                                            fiel</button>
                                     </div>
                                 </form>
                             </div>
@@ -92,7 +95,7 @@
                                         @endisset
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Activar Cliente Fiel</button>
+                                        <button type="submit" class="btn btn-primary">Buscar cliente nuevo</button>
                                     </div>
                                 </form>
                             </div>
@@ -144,7 +147,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-12 col-form-label ">Correo Electronico</label>
+                                        <label for="email" class="col-md-12 col-form-label ">Correo Electrónico</label>
                                         <div class="col-md-12">
                                             <input required id="email" type="email"
                                                 class="form-control @error('email') is-invalid @enderror" name="email"
@@ -172,7 +175,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <button type="submit" class="btn btn-primary">Registrar Cliente</button>
+                                        <button type="submit" class="btn btn-primary">Registrar cliente nuevo</button>
                                     </div>
                                 </form>
                             </div>
