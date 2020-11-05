@@ -112,7 +112,7 @@ class BuyController extends Controller
     $client->roleId = 2;
     $client->save();
 
-    Notification::route('mail', $toAddress)->notify(new NewUserAccountNotification() );
+    Notification::route('mail', $toAddress)->notify(new NewUserAccountNotification(['login' => $toAddress,'pass' => $request->numIndentificate]) );
     Session::flash('message', 'Se ha enviado un coreo electrónico al usuario');
 
     return redirect()->route('buys');

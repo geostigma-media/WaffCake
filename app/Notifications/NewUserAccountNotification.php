@@ -19,7 +19,8 @@ class NewUserAccountNotification extends Notification
      */
     public function __construct()
     {
-        //
+        $this->login = $data['login'];
+        $this->pass = $data['pass'];
     }
 
     /**
@@ -41,11 +42,15 @@ class NewUserAccountNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $loginLine = sprintf('Los datos de acceso son tu correo electrónico %s y tu contraseña: %s', $this->login, $this->pass);
+        
         return (new MailMessage)
                     ->greeting('Bienvenido!')
                     ->subject('Una cuenta ha sido creada - Waff Cake')
-                    ->line('Estás registrado en nuestro programa de beneficios Waffcake, utiliza el botón para completar tu registro:')
-                    ->action('Completar registro', url('/'))
+                    ->line('Estás registrado en nuestro programa de beneficios Waffcake,utiliza el botón para ingresar a la plataforma:')
+                    ->action('Ingresar', url('/'))
+                    ->line($loginLine)
+                    ->line(new HtmlString('<br/>'))
                     ->line('Conoce tu código y comienza a disfrutar del sabor wafflero con descuentos especiales. Recuerda que lo activas con tu primera compra.')
                     ->line(new HtmlString('<br/>'));
     }
